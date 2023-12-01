@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5bbf58a6-1e85-4cfe-83fd-02df6f482b45/de8nlib-6bed7b3d-3d7e-4763-bb60-18f5ee0127fd.png/v1/fill/w_1024,h_652,q_80,strp/background_prairie_pokemon_screencapture_by_nemotrex_de8nlib-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjUyIiwicGF0aCI6IlwvZlwvNWJiZjU4YTYtMWU4NS00Y2ZlLTgzZmQtMDJkZjZmNDgyYjQ1XC9kZThubGliLTZiZWQ3YjNkLTNkN2UtNDc2My1iYjYwLTE4ZjVlZTAxMjdmZC5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ZVgNGi61AOkC068E-wphWmAUW8amj0MiJySqDcMCVh8");
+            background-repeat: repeat-y;
+            background-size: cover;
+            font-family: 'Chakra Petch', sans-serif !important;
+            width: 100vw;
+        }
+
+        .container {
+            margin: auto;
+            padding: 10px 80px;
+            width: 100%;
+        }
+
+        .row{
+            justify-content: center;
+            width: 1200px;          
+        }
+
+        label{
+            font-size: 30px;
+        }
+        input {
+            width: 300px;
+            height: 30px;
+        }
+        .col-4 button { 
+            margin-top: 10px;
+            padding: 10px 40px 10px 40px;
+            border-radius: 20px;
+        }
+        .col-4 p {
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .container {
+            margin-left: 5vw;
+            margin-top: 5vh;
+        }
+        .Card {
+            border: 2px solid black;
+            width: fit-content;
+            margin-top: 10px;
+            height: auto;
+            border-radius: 40px;
+            background-color: rgba(240, 248, 255, 0.478);
+    
+        }
+        .Card div {
+            padding: 20px 60px;
+        }
+        .winner {
+            text-align: center;
+            margin-top: 10vh;
+        }
+
+        .winner img{
+            width: 90%;
+            background-image: url("https://img.freepik.com/premium-vector/winner-background-with-signs-first-second-third-place-round-pedestal-vector-winner_220217-4391.jpg");
+            background-position: -80px 150px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 30px;
+            opacity: 1;
+
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
+</head>
+<body> 
+    <div class="container">
+        <div class="row">
+          <div class="col-4">
+                <label for="poke-id-1">Pokemon ID:</label><br>
+                <input type="text" id="poke-id-1" name="pokeID-1" value="1" onkeypress="handleKeyPress(event, 1)"><br>
+                <button onclick="getPoke(1)">Enter</button>
+                <div class="Card">
+                <div>
+                    <h1 id="poke-name-1" style="text-align: center;"></h1>
+                    <img src="" alt="" id="poke-pic-1" style="width: 150px;">
+                    <p id="poke-hp-1"></p>
+                    <p id="poke-atk-1"></p>
+                    <p id="poke-def-1"></p>
+                    <p id="poke-speed-1"></p>
+                    <span id="poke-skill-1"></span>
+                </div>
+                </div>
+          </div>
+          <div class="col-4">
+                <label for="poke-id-2">Pokemon ID:</label><br>
+                <input type="text" id="poke-id-2" name="pokeID-2" value="2"onkeypress="handleKeyPress(event, 2)"><br>
+                <button onclick="getPoke(2)">Enter</button>
+                <div class="Card">
+                <div>
+                    <h1 id="poke-name-2" style="text-align: center;"></h1>
+                    <img src="" alt="" id="poke-pic-2" style="width: 150px;">
+                    <p id="poke-hp-2"></p>
+                    <p id="poke-atk-2"></p>
+                    <p id="poke-def-2"></p>
+                    <p id="poke-speed-2"></p>
+                    <span id="poke-skill-2"></span>
+                </div>
+                </div>
+          </div>
+          <div class="col-4 winner">
+                <label>Winner</label>
+                <div class="show-win" id="winner">
+
+                </div>
+          </div>
+        </div>
+    </div>
+
+    <script>
+        async function logPokemons(id, index) {
+         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}` ,{     
+         mode: 'cors',
+         headers: {
+         'Access-Control-Allow-Origin':'*'
+         }});
+         const pokemons = await response.json();
+            console.log(pokemons.forms);
+            name = document.querySelector(`#poke-name-${index}`).innerHTML = pokemons.forms[0].name;
+            document.querySelector(`#poke-pic-${index}`).setAttribute('src', pokemons.sprites.front_default);
+            document.querySelector(`#poke-hp-${index}`).innerHTML = `HP: ${pokemons.stats[0].base_stat}`;
+            let att = document.querySelector(`#poke-atk-${index}`).innerHTML = `Attack: ${pokemons.stats[1].base_stat}`;
+            let def = document.querySelector(`#poke-def-${index}`).innerHTML = `Defense: ${pokemons.stats[2].base_stat}`;
+            let spd = document.querySelector(`#poke-speed-${index}`).innerHTML = `Speed: ${pokemons.stats[5].base_stat}`;
+            document.querySelector(`#poke-skill-${index}`).innerHTML = `<p>Skill-1: ${pokemons.abilities[0].ability.name} </p> <p>Skill-2: ${pokemons.abilities[1].ability.name}</p>`;
+            checkWinner();
+        }   
+
+        function getPoke(index){
+            let id = document.querySelector(`#poke-id-${index}`).value;
+            logPokemons(id, index);
+        }
+
+        function checkWinner() {
+            let att1 = parseInt(document.querySelector("#poke-atk-1").innerText.split(":")[1].trim());
+            let def1 = parseInt(document.querySelector("#poke-def-1").innerText.split(":")[1].trim());
+            let spd1 = parseInt(document.querySelector("#poke-speed-1").innerText.split(":")[1].trim());
+
+            let att2 = parseInt(document.querySelector("#poke-atk-2").innerText.split(":")[1].trim());
+            let def2 = parseInt(document.querySelector("#poke-def-2").innerText.split(":")[1].trim());
+            let spd2 = parseInt(document.querySelector("#poke-speed-2").innerText.split(":")[1].trim());
+
+            let totalStats1 = att1 + def1 + spd1;
+            let totalStats2 = att2 + def2 + spd2;
+
+            let winnerElement = document.querySelector("#winner");
+
+            if (totalStats1 > totalStats2) {
+                winnerElement.innerHTML = `
+         
+                    <h1> ${document.querySelector("#poke-name-1").innerText} </h1><br>
+                    <img src="${document.querySelector("#poke-pic-1").getAttribute('src')}" alt="Pokemon 1 ">
+
+                `;
+            } else if (totalStats1 < totalStats2) {
+                winnerElement.innerHTML = `
+  
+                    <h1> ${document.querySelector("#poke-name-2").innerText} </h1><br>
+                    <img src="${document.querySelector("#poke-pic-2").getAttribute('src')}" alt="Pokemon 2">
+
+                `;
+            } else {
+                winnerElement.innerHTML = "It's a tie!";
+            }
+        }
+
+        function handleKeyPress(event, index) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            getPoke(index);
+        }
+    }
+
+    getPoke(1);
+    getPoke(2);
+    checkWinner();
+    </script>
+</body>
+</html>
