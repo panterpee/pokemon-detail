@@ -23,16 +23,18 @@ function getPoke(index) {
 }
 
 function checkWinner() {
+    let hp1 = parseInt(document.querySelector("#poke-hp-1").innerText.split(":")[1].trim());
     let att1 = parseInt(document.querySelector("#poke-atk-1").innerText.split(":")[1].trim());
     let def1 = parseInt(document.querySelector("#poke-def-1").innerText.split(":")[1].trim());
     let spd1 = parseInt(document.querySelector("#poke-speed-1").innerText.split(":")[1].trim());
 
+    let hp2 = parseInt(document.querySelector("#poke-hp-1").innerText.split(":")[1].trim());
     let att2 = parseInt(document.querySelector("#poke-atk-2").innerText.split(":")[1].trim());
     let def2 = parseInt(document.querySelector("#poke-def-2").innerText.split(":")[1].trim());
     let spd2 = parseInt(document.querySelector("#poke-speed-2").innerText.split(":")[1].trim());
 
-    let totalStats1 = att1 + def1 + spd1;
-    let totalStats2 = att2 + def2 + spd2;
+    let totalStats1 = hp1 + att1 + def1 + spd1;
+    let totalStats2 = hp2 + att2 + def2 + spd2;
 
     let winnerElement = document.querySelector("#winner");
 
